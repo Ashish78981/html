@@ -1,0 +1,21 @@
+<html>
+<head>
+    </head>
+    <body>
+    <h3> Closures in Javascript</h3>
+    <script>
+        function addNumbers(firstNumber, secondNumber) 
+{
+    var returnValue = "Result is : ";
+    function add() 
+    {
+        return returnValue + (firstNumber + secondNumber);
+    }
+    return add();
+}
+
+var result = addNumbers(10, 20);
+document.write(result);
+        </script>
+    </body>
+</html>
