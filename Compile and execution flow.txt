@@ -1,0 +1,33 @@
+Script:
+
+1. var foo = "bar";
+2. function bar() {
+3. var foo = "baz";
+4. function baz(foo) {
+5. foo = "bam";
+6. bam = "yay";
+7. }
+8. baz(); 
+9. }
+10.bar();
+11.baz();
+
+Compilation phase: 
+Firstly, in the global scope, it will register variable 'foo' and function 'bar'. 
+In bar scope, variable foo and function baz gets registered.
+In baz scope, foo gets registered.
+
+Execution phase:
+Execution according to the line.
+In line 1, variable foo will be read and it is assigned a value called bar.
+Next, in line 10, function bar will be called and executed. 
+In line 3, variable foo is assigned a value called baz.
+And now, in line 8, function baz will be called and executed. 
+In line 4, function baz has a parameter called foo. 	
+foo is assigned a value called bam in local scope.
+And for bam in local scope, there is no reference and it has not been declared as a variable. So, it automatically becomes global variable.
+bam is assigned a vvalue called 'yay'.
+
+And coming to line 11, function 'baz' has already been declared in function 'bar'. And it has not been defined, so there will be a reference error.
+
+			
