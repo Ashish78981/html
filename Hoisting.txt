@@ -1,0 +1,44 @@
+Hoisting in javascript is moving declarations to the top. 
+In javascript, a varaible has to be declared and then to be initialized before we use it. 
+As It is a step by step execution, Initializations cannot be hoisted. A variable has to be initialized before it has been used. Whereas, declarations can be hoisted. That means, We can use a variable, before it has been declared. 
+ 
+Example 1:
+In this example, both variables x and y are not declared, but used. 
+<html>
+<body>
+<script>
+x = 10; 
+y = 16; 
+document.write(x+" "+y);       
+</script>
+</body>
+</html> 
+ 
+Example 2:
+In this example, both variables x and y are declared, after they are used.
+<html>
+<body>
+<script>
+x = 10; 
+y = 16; 
+var x;
+document.write(x+" "+y);       
+</script>
+</body>
+</html>
+ 
+Example 3:
+In this example, a variable has been initialized before it has been used
+<html>
+<body>
+<script>
+var x;
+var y=10; 
+document.write(x+" "+y);      
+x=6; 
+</script>
+</body>
+</html>
+In the above example, variable x has been initialized after it has been used. But, we have output statement before initialization. So they value of x will be undefined.
+ 
+By this example, we can understand that declarations can be hoisted, whereas initializations cannot be hoisted.

@@ -1,0 +1,67 @@
+Flex box helps in design of responsive web-pages.
+In the example below, three flex items are positioned from left to right by default. 
+<html>
+<head>
+<style> 
+.flexbox{
+display: -webkit-flex;
+display: flex;
+   
+}
+.flex {
+background-color: cornflowerblue;
+width: 90px;
+height: 30px;
+margin: 10px;
+}
+</style>
+</head>
+<body>
+<div class="flexbox">
+<div class="flex">flex 1</div>
+<div class="flex">flex 2</div>
+<div class="flex">flex 3</div>  
+</div>
+</body>
+</html>
+ 
+With the following property, we can position elements from right to left.
+body {
+direction: rtl;
+}
+ 
+<html>
+<head>
+<style> 
+body {
+direction: rtl;
+}
+.flexbox{
+display: -webkit-flex;
+display: flex;
+   
+}
+.flex {
+background-color: cornflowerblue;
+width: 90px;
+height: 30px;
+margin: 10px;
+}
+</style>
+</head>
+<body>
+<div class="flexbox">
+<div class="flex">flex 1</div>
+<div class="flex">flex 2</div>
+<div class="flex">flex 3</div>  
+</div>
+</body>
+</html>
+ 
+In the same way, rows can be reversed, with row-reverse property and coloumns can be reverses with coloumn-reverse property.
+-webkit-flex-direction: row-reverse;
+flex-direction: row-reverse;
+ 
+-webkit-flex-direction: column-reverse;
+flex-direction: column-reverse;
+ 
