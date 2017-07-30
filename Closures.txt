@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<button type="button" onclick="count()">Count</button>
+
+<p id="view">0</p>
+
+<script>
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+function count(){
+    document.getElementById("view").innerHTML = add();
+}
+</script>
+
+</body>
+</html>
+

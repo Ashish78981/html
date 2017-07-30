@@ -1,0 +1,25 @@
+A function can access a variable that is declared inside it. It's because it is local to that function.
+Example 1: 
+
+<script>
+function add(){
+var x = 8;
+document.write(x);
+}
+add();
+</script>
+
+A function can access a variable that is declared outside of it. It's because, a global variable can be accessed anywhere in the window..
+The lifetime of a global variable depends upon the window. It lives as long as the window is open.
+Whereas, local variables are created when the function is called, and deleted when the function is executed.
+
+Example 2:
+
+<script>
+var x = 8;
+function add(){
+document.write(x);
+}
+add();
+</script>
+
