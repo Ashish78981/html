@@ -1,0 +1,21 @@
+<html>
+<body>
+<p id = "demo"> dfdfd</p>
+<button type = "button" onclick = "func()"> Display </button>
+<script>
+function showName (firstName, lastName) {
+var nameIntro = "Your name is ";
+function makeFullName () {      
+return nameIntro + firstName + " " + lastName;
+}
+
+return makeFullName ();
+};
+
+function func(){
+document.getElementById("demo").innerHTML = showName("Michael", "Jackson");
+}
+
+</script>
+</body>
+</html>
