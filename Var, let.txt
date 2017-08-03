@@ -1,0 +1,68 @@
+Var keyword allows us to declare a variable globally to the window or global to a function in which it has declared. 
+Whereas, let keyword allows us to limit the scope of a variable to the block, statement, or expression on which it is used.
+
+Example 1: 
+function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2;  // same variable!
+    console.log(x);  // 2
+  }
+  console.log(x);  // 2
+}
+In the above function, variable x is firstly declared in outer function and again it has been declared in inner function with the same name and assigned a 
+different value. Now the value of variable x is overriden by the value of variable x in inner function. The value has been changed from 1 to 2.
+
+Example 2:
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // different variable
+    console.log(x);  // 2
+  }
+  console.log(x);  // 1
+}
+In the above function, variable x is firstly declared in outer function with 'let' keyword. Again it has been declared in inner function with the same name and assigned a 
+different value. Here, unlike var, variable in the inner function is different from variable in the outer function. Because, let limits the scope of a variable to
+only if statement in which it has been declared.
+
+At the top level of programs and functions, let, unlike var, does not create a property on the global object.
+
+Example: 
+function varvslet() {
+  console.log(i); // i is undefined due to hoisting
+  // console.log(j); // ReferenceError: j is not defined
+
+  for( var i = 0; i < 3; i++ ) {
+    console.log(i); // 0, 1, 2
+  };
+
+  console.log(i); // 3
+  // console.log(j); // ReferenceError: j is not defined
+
+  for( let j = 0; j < 3; j++ ) {
+    console.log(j);
+  };
+
+  console.log(i); // 3
+  // console.log(j); // ReferenceError: j is not defined
+}
+
+Example 3:
+Closure in Loop
+
+let in the loop can re-binds it to each iteration of the loop, making sure to re-assign it the value from the end of the previous loop iteration, so it can be used to avoid issue with closures.
+
+for (var i = 0; i < 5; ++i) {
+  setTimeout(function () {
+    console.log(i); // output '5' 5 times
+  }, 100);  
+}
+After replacing var with let
+
+// print 1, 2, 3, 4, 5
+for (let i = 0; i < 5; ++i) {
+  setTimeout(function () {
+    console.log(i); // output 0, 1, 2, 3, 4 
+  }, 100);  
+}

@@ -1,0 +1,50 @@
+Const variable is same as let keyword. It has block scope. But a variable declared with const cannot be re-declared and it's value cannot be changed. 
+This declaration creates a constant whose scope can be either global (on the window object) or local to the block in which it is declared. An initializer 
+for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).
+
+Examples:
+
+A constant is declared and given a value 7.
+const MY_FAV = 7;
+
+Now, if we change the value to 6 or any other, it throws an error.
+
+Trying to redeclare a constant throws an error. i.e., const MY_FAV = 20;
+
+
+The name MY_FAV is reserved for constant.
+So, declaring the same variable with 'var' and 'let' causes an error. var MY_FAV = 20;
+
+It's important to note the nature of block scoping
+if (MY_FAV === 7) { 
+    // this is fine and creates a block scoped MY_FAV variable 
+    // (works equally well with let to declare a block scoped non const variable)
+    let MY_FAV = 20;
+
+    // MY_FAV is now 20
+    console.log('my favorite number is ' + MY_FAV);
+
+    // this gets hoisted into the global context and throws an error
+    var MY_FAV = 20;
+}
+
+// MY_FAV is still 7
+console.log('my favorite number is ' + MY_FAV);
+
+
+// const also works on objects
+const MY_OBJECT = {'key': 'value'};
+
+// Attempting to overwrite the object throws an error
+MY_OBJECT = {'OTHER_KEY': 'value'};
+
+// However, object keys are not protected,
+// so the following statement is executed without problem
+MY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable
+
+// The same applies to arrays
+const MY_ARRAY = [];
+// It's possible to push items into the array
+MY_ARRAY.push('A'); // ["A"]
+// However, assigning a new array to the variable throws an error
+MY_ARRAY = ['B']
