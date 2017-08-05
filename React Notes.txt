@@ -1,0 +1,84 @@
+React.js is a latest framework introduced by Facebook.
+
+To use react, first we need to install N.P.M(Node package manager). It consists of required libraries for react.js to run.
+To use react, there are 3 ways. 
+One is the simple way, by writing code and editing it using any editor.
+The second one is, Create React App is the best way to start building a new React single page application. 
+It sets up your development environment so that you can use the latest JavaScript features.
+
+Command for creating a react app:
+npm install -g create-react-app
+create-react-app my-app
+cd my-app
+npm start
+
+After this, we can save the source file and edit it.
+
+The last method is Adding react to an existing application.
+
+
+J.S.X( Javascript and X.M.L )
+It is Syntax extension to Javascript. It comes with full power of JavaScript and it produces react elements. 
+For example consider this code: 
+const element = <h1>Hello, world!</h1>;
+It is neither a HTML nor string. It has different structure compared to Javascript and HTML.
+So, to compile this we need transpiler. It is a tool that read source code written in one programming language, and produce the equivalent code in another language. 
+So, they convert JSX to javascript.
+
+We can embed any Javascript code into JSX by placing the code in curly braces. 
+
+For example:
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+
+const element = (
+  <h1>
+    Hello, {formatName(user)}!
+  </h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+In the above example, 
+First we declared a function with name called formatName and added user as a parameter to it. In that we have returned firstName and last Name of user
+Then we have declared const variable called user and assigned an object to that. firstName and last Name are placed in that object.
+Now, we have created const element and we have placed JSX code in that. Inside that we have placed Hello and without concatenation, we have added 
+'formatName' function by simply putting in curly braces. In this way, we have embedded javascript into JSX. 
+Finally, using ReactDom.render we are rendering this code to the DOM in HTML page. 
+
+We can use JSX as an expression. It can be used inside if statements and for loops. It can be assigned it to variables, accept it as arguments, and return 
+it from functions.
+Example:
+function getGreeting(user) {
+  if (user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>Hello, Stranger.</h1>;
+}
+
+Specifying Attributes with JSX
+We can use quotes to mention string literals as attributes.
+Example:
+const element = <div tabIndex="0"></div>;
+
+We can use curly braces to embed js code into the attributes.
+const element = <img src={user.avatarUrl}></img>;
+
+Note: If we put quotes around javascript code, JSX will treat it as string literal rather than an expression.
+
+Same like HTML, As we put child tags, we can also put child tags inside JSX tags.
+const element = (
+  <div>
+    <h1>Hello!</h1>
+    <h2>Good to see you here.</h2>
+  </div>
+);
