@@ -1,0 +1,53 @@
+Components splits UI into independent, reusable pieces, and think about each piece in isolation.
+
+Components are like JavaScript functions. They accept inputs called props and return React elements describing what should appear on the screen.
+
+The simplest way to define a component is to write a JavaScript function:
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+Above, we have given function name called Welcome and passed parameter called props. We have returned a react element. So, we call this elements as functions, 
+because they are similar like javascript functions.
+
+And the other way of defining a component is through ES6 classes.
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+The above two components are equivalent from React's point of view.
+
+In the above class, we use extend so that we can create a sub-class of another class.
+
+Rendering a component: 
+Previously, we only encountered React elements that represent DOM tags:
+const element = <div />;
+
+However, elements can also represent user-defined components:
+const element = <Welcome name="Sara" />;
+
+When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+
+Example:
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+Explanation.
+
+We call ReactDOM.render() with element called <Welcome name="Sara" />.
+React calls the Welcome component (javascript Welcome function) with {name: 'Sara'} as the props. So, here props.name is assigned name called 'sara'.
+Our Welcome component (javascript Welcome function) returns <h1>Hello, Sara</h1> element as the result.
+Then, React DOM updates the DOM to match <h1>Hello, Sara</h1>.
+
+Note: Components must be started with capital letter T.
+

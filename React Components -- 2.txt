@@ -1,0 +1,27 @@
+Composing Components:
+Components can refer to other components in their output. 
+For example, we can create an App component that renders Welcome multiple times:
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+
+In the above example,
+Firstly, React renders app component, then it returns 3 names given inside the return statement in function.
+Welcome and name refers to the Welcome component. It assigns 3 names to props. 
+props.name has been given 3 values each time.
