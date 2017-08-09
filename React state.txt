@@ -1,0 +1,64 @@
+React State and LifeCycle:
+
+So far, we have only learned ReactDom.render() to change the output.
+Example: 
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+
+In the above example, we have declared a function called tick. Inside that function, we have placed one React const element and embedded some information into it.
+And in the same function, we used ReactDOM.render in the same function to render into DOM. 
+And lastly, we have declared setInterval function and set interval at 1000 milli seconds, so that the function calls for every second.
+
+And to implement this code in react,
+
+We have to give import ReactDOM from 'react-dom'; command to import ReactDom and we can edit app.js file and save to reload.
+
+So, this will be the code.
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import ReactDOM from 'react-dom';
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+   ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+ }
+
+setInterval(tick, 1000);
+export default App;
+
